@@ -51,9 +51,10 @@ class MySettings(object):
                 self.TextMessage = "/me go give these guys a follow <3 "
                 self.Emotes = "bleedPurple bleedPurple bleedPurple"
                 self.Seperator = True
+                self.SeperatorStyle = "ThinSep1"
                 self.EndSeperator = True
-                self.Extended = False
-                self.Thick = False
+                #self.Extended = False
+                #self.Thick = False
                 self.EndMessage = "Send them some love! <3"
                 self.Tags = True
         except:
@@ -123,14 +124,22 @@ def ShoutOut(data):
     After generating a sting, calls function to send message to chat.
     """
     try:
-        n = 30
-        symbol = "▬"
-        Tsymbol = "░"
-        if ScriptSettings.Extended:
-            n += 5
-        if ScriptSettings.Thick:
-            symbol = Tsymbol
-        MySeperator = " " + symbol * n + " "
+        # These are the different seperators. Each should be the same length as the default Twitch chat width in a browser on PC. This is not true in phone. 
+        ThinSep1 = "────────────────────────────────"
+        ThinSep2 = "════════════ ⋆★⋆ ════════════════"
+        ThinSep3 = "───────────※ ·❆· ※─────────────"
+        ThickSep1 = "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"
+        ThickSep2 = "▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌"
+        ThickSep3 = "█▒▒▒▒▒▒▒▒▒▒█   ◈   █▒▒▒▒▒▒▒▒▒▒▒█"
+        
+        MySeperator = ScriptSettings.SeperatorStyle
+        MySeperator = MySeperator.replace("ThinSep1", ThinSep1)
+        MySeperator = MySeperator.replace("ThinSep2", ThinSep2)
+        MySeperator = MySeperator.replace("ThinSep3", ThinSep3)
+        MySeperator = MySeperator.replace("ThickSep1", ThickSep1)
+        MySeperator = MySeperator.replace("ThickSep2", ThickSep2)
+        MySeperator = MySeperator.replace("ThickSep3", ThickSep3)
+        
         if ScriptSettings.Seperator:
             MyStart = ScriptSettings.TextMessage + MySeperator
         else:
@@ -151,7 +160,7 @@ def ShoutOut(data):
             namn = data.GetParam(i).lower()
             namn = namn.replace("@", "")
             namn = namn.replace(",", "")
-            soText += Emotes + Tag + Parent.GetDisplayName(namn) + " over at: https://twitch.tv/" + namn
+            soText += Emotes + Tag + Parent.GetDisplayName(namn) + " over at: https://twitch.tv/" + namn + " "
             if data.GetParamCount() == 2:
                 break
         soText += MyEnd

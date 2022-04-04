@@ -34,7 +34,7 @@
     "Permission": {
     "type": "dropdown",
     "value": "Moderator",
-    "items": ["Everyone","Regular","Subscriber","GameWisp Subscriber","User_Specific","Min_Rank","Min_Points","Min_Hours","Moderator","Editor","Caster"],
+    "items": ["Everyone","Regular","Subscriber","GameWisp Subscriber","User_Specific","Min_Rank","Min_Points","Min_Hours","Moderator","Editor","Caster","VIP+","VIP Exclusive"],
     "label": "Permission level",
     "tooltip": "Set the permission level for the command",
     "group": "General"
@@ -60,6 +60,14 @@
     "tooltip": "Use line reset between base response and first link!",
 	"group": "Responses"
   },
+    "SeperatorStyle": {
+		"type": "dropdown",
+		"value": "ThinSep1",
+		"items": ["ThinSep1", "ThinSep2", "ThinSep3", "ThickSep1", "ThickSep2", "ThickSep3"],
+		"label": "Seperator Style",
+		"tooltip": "Set the style of the seperators",
+		"group": "Responses"
+	},
     "EndMessage": {
     "type": "textbox",
     "value": "",
@@ -72,20 +80,6 @@
     "value": true,
 	"label": "End line",
     "tooltip": "Use line after the last link to close off the command",
-	"group": "Responses"
-  },
-    "Extended": {
-    "type": "checkbox",
-    "value": false,
-	"label": "Extended seperators",
-    "tooltip": "Extended seperators to fit the new twitch default font",
-	"group": "Responses"
-  },
-  "Thick": {
-    "type": "checkbox",
-    "value": true,
-	"label": "Thick seperators",
-    "tooltip": "Use thicker seperators instead of the default ones",
 	"group": "Responses"
   },
     "Emotes": {
