@@ -20,7 +20,7 @@ ScriptName = "MultiShoutout"
 Website = "https://github.com/salhol/MultiShoutout"
 Description = "Give a shoutout to multiple people at once!"
 Creator = "Sally Holm"
-Version = "1.0.0.0"
+Version = "1.0.0.1"
 
 ## ---------------------------------------
 ##  [Required] Settings Class
